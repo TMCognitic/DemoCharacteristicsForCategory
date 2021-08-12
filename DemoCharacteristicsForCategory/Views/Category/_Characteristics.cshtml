@@ -1,0 +1,26 @@
+﻿@model IEnumerable<string>
+@{ int indice = 0; }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Characterstics
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (string item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" onclick="RemoveCharacteristic(@indice)">Delete</button>
+                </td>
+            </tr>
+            { indice++; }
+        }
+    </tbody>
+</table>
